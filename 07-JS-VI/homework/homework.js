@@ -25,8 +25,8 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  var sumador = 0;
-  var suma = numeros.forEach(function(a) {
+  let sumador = 0;
+  let suma = numeros.forEach(function(a) {
     sumador = sumador + a;
     return sumador;
   })
@@ -48,12 +48,7 @@ function map(array, cb) {
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
 
-  /* var new_array = [];
-  array.forEach(function(a) {
-    new_array.push(cb(a));
-  })
-  return new_array; */
-  var nuevo_array = array.map(function(a) {
+  let nuevo_array = array.map(function(a) {
     return cb(a);
   })
   return nuevo_array;
@@ -63,7 +58,7 @@ function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
-  var new_array = array.filter(function(a) {
+  let new_array = array.filter(function(a) {
     if (a[0] === "a") {
       return a;
     }

@@ -6,7 +6,7 @@ function crearGato (nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  var objeto = {
+  let objeto = {
     nombre: nombre,
     edad: edad,
     meow: function() {
@@ -54,7 +54,7 @@ function nuevoUsuario (nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-  var new_obj = {
+  let new_obj = {
     nombre: nombre,
     email: email,
     password: password
@@ -67,11 +67,7 @@ function tieneEmail (usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(usuario.email != undefined) {
-    return true;
-  } else {
-    return false;
-  }
+  return usuario.email != undefined
 }
 
 function tienePropiedad (objeto, propiedad) {
@@ -79,11 +75,7 @@ function tienePropiedad (objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (objeto[propiedad] != undefined)  {
-    return true;
-  } else {
-    return false;
-  }
+  return objeto.hasOwnProperty(propiedad);
 }
 
 function verificarPassword (usuario, password) {
@@ -91,11 +83,7 @@ function verificarPassword (usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (usuario.password === password) {
-    return true;
-  } else {
-    return false;
-  }
+  return usuario.password === password;
 }
 
 function actualizarPassword (usuario, nuevaPassword) {
@@ -134,7 +122,7 @@ function sumarLikesDeUsuario (usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-  var suma = 0;
+  let suma = 0;
   usuario.posts.forEach(function(a) {
     suma += a.likes;
   })
