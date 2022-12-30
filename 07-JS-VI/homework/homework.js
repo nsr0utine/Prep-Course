@@ -27,7 +27,7 @@ function sumarArray(numeros, cb) {
   //Tu código:
   let sumador = 0;
   let suma = numeros.forEach(function(a) {
-    sumador = sumador + a;
+    sumador += a;
     return sumador;
   })
   cb(sumador);

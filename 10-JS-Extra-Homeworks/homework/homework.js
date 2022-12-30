@@ -10,6 +10,7 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  return Object.entries(objeto);
 }
 
 
@@ -26,6 +27,16 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  let upper = s.split("").filter(function (a) {
+    return a === a.toUpperCase();
+  });
+
+  let lower = s.split("").filter(function (a) {
+    return a === a.toLowerCase();
+  })
+
+  return upper.join("") + lower.join("");
+
 }
 
 
@@ -35,6 +46,10 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  let str2 = str.split(" ").map(function (a) {
+    return a.split("").reverse().join("");
+  });
+  return str2.join(" ");
 } 
 
 
@@ -43,6 +58,10 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  if (numero == numero.toString().split("").reverse().join("")) {
+    return "Es capicua";
+  }
+  return "No es capicua";
 }
 
 
@@ -50,6 +69,17 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  if (cadena.includes("a")) {
+    return deleteAbc(cadena.replace ("a", ""));
+  }
+  if (cadena.includes("b")) {
+    return deleteAbc(cadena.replace ("b", ""));
+  }
+  if (cadena.includes("c")) {
+    return deleteAbc(cadena.replace ("c", ""));
+  }
+
+  return cadena;
 }
 
 
@@ -57,6 +87,7 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  
 }
 
 
@@ -65,7 +96,18 @@ function buscoInterseccion(arreglo1, arreglo2){
   //retornar un nuevo array con la intersección de ambos elementos. (Ej: [4,2,3] unión [1,3,4] = [3,4].
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
-  //Escribe tu código aquí  
+  //Escribe tu código aquí
+    let intersection = [];
+  arreglo1.forEach(function (a) {
+    arreglo2.forEach(function (b) {
+      if (a === b) {
+        intersection.push(a);
+      }
+    });
+  });
+
+  return intersection;
+
 }
 
 
@@ -83,4 +125,3 @@ module.exports = {
    sortArray,
    buscoInterseccion,
 };
-
